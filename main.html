@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Website Assignment</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<style>
+body {
+background-color: #000000;
+transition: background 0.5s, color 0.5s;
+text-align: center;
+margin: 0;
+}
+.header {
+color: white;
+text-align: center;
+font-family: 'Montserrat', sans-serif;
+padding: 10px;
+font-size: 40px;
+}
+.h2 {
+color: white;
+text-align: center;
+font-family: 'Roboto', sans-serif;
+padding: 10px;
+font-size: 20px;
+}
+.title {
+color:white;
+text-align:center;
+font-family: 'Roboto', sans-serif;
+padding: 15px;
+font-size: 20px;
+}
+.image-list {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+.image-list img {
+width: 100%;
+height: 600px;
+}
+.image-list li {
+margin-bottom: 20px;
+}
+.parallax {
+position: relative;
+width: 100%;
+height: 600px;
+background-size: cover;
+background-attachment: fixed;
+}
+.container {
+position: relative;
+}
+.overlay {
+position: absolute;
+opacity: 0.6;
+bottom: 100%;
+left: 0;
+right: 0;
+background-color: #000000;
+overflow: hidden;
+width: 100%;
+height: 0;
+transition: .5s ease;
+}
+.container:hover.overlay {
+bottom: 0;
+height: 100%;
+}
+.btn {
+font-size: 16px;
+background-color: #ffffff;
+color: black;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+position: absolute;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+display: block;
+text-decoration: none;
+}
+
+.article{
+color:white;
+
+text-align:center;
+font-family: 'Roboto', sans-serif;
+padding: 15px;
+font-size: 20px;
+}
+
+.footer {
+background-color: #000000;
+padding: 10px;
+font-family: 'Roboto', sans-serif;
+text-align: center;
+color: white;
+font-size: 15px;
+font-family: Geneva;
+}
+</style>
+</head>
+<body>
+<header>
+<center>
+<h1 class="header">SPACE EXPLORATION</h1>
+<marquee><h2 class="h2">Embark on an extraordinary journey through the cosmos at Blackhole Explorations Conference Explore the mysteries of the universe and uncover the secrets of space with visionary minds and groundbreaking discoveries.</h2></marquee>
+</center>
+</header>
+<hr>
+<article>
+<ul class="image-list">
+<li>
+<div class="container parallax" style="background-image: url('https://www.teslarati.com/wp-content/uploads/2019/04/Falcon-Heavy-Flight-2-liftoff-Pauline-Acalin-6-2-c.jpg');">
+
+
+</div>
+
+<article class = "article">
+We do Conferences is undertaking the Space Exploration Exposition, where the earth and the stars are bridged by knowledge. Join us as we uncover the mysteries of the universe and the history of human curiosity. We believe that our children are the window to the future, so join us as we explore the galaxies with certified and renowned specialists as they enlighten us with profound speeches and perplexing questions. Embark on a cosmic journey like no other at the Space Exploration Conference! Immerse yourself in the awe-inspiring wonders of the cosmos as our distinguished keynote speakers take you on a captivating voyage through the universe. Delve into the intricacies of black holes, supernovae, and distant galaxies as we unravel the mysteries of space-time and explore the boundaries of human understanding. From the birth of stars to the search for extraterrestrial life, our speakers will illuminate the cutting-edge research and groundbreaking discoveries shaping the future of space exploration. Whether you're a seasoned astronomer or a curious novice, there's something for everyone at this extraordinary event. Join us as we venture into the unknown and unlock the secrets of the cosmos together!"
+</article>
+
+
+</li>
+<li>
+
+<div class="container parallax" style="background-image: url('https://cdn.britannica.com/17/132317-050-8328935B/Artist-conception-Mars-Science-Laboratory.jpg');">
+<div class="overlay">
+<a href="#" class="btn">Learn More</a>
+</div>
+</div>
+
+<article class = "article">At the Space Exploration Conference, we're not just delving into the depths of the cosmos with our esteemed keynote speakers; we're also bringing together leading companies and organizations from the space industry. From aerospace giants to innovative startups, discover the latest technologies, products, and services shaping the future of space exploration. Engage with industry experts, network with like-minded professionals, and explore exciting opportunities for collaboration and partnership. Whether you're looking to showcase your company's latest innovations, connect with potential investors, or simply stay abreast of the latest trends in space technology, our conference provides the perfect platform to propel your business to new heights. Join us as we unite visionaries, entrepreneurs, and pioneers in a collective endeavor to push the boundaries of space exploration and forge a path to a bold new frontier.</article>
+</li>
+<li>
+
+<div class="container parallax" style="background-image: url('https://www.bu.edu/files/2022/07/feat-STScI-01G7ETNMR8CBHQQ64R4CVA1E6T.jpg');">
+<div class="overlay">
+<a href="#" class="btn">Learn More</a>
+</div>
+</div>
+
+<article class = "article">Embark on an interstellar journey with our stellar membership options: Gold, Platinum, Silver, and Bronze. Each tier offers celestial perks, including exclusive access to keynote speakers, VIP sessions, and cosmic workshops. Elevate your experience with our prestigious evening formal dinner, where you'll mingle with space visionaries and fellow enthusiasts. Join us and become part of the cosmic conversation – secure your membership now!</article>
+
+</li>
+<li>
+
+<div class="container parallax" style="background-image: url('https://www.wired.com/images_blogs/wiredscience/2012/02/eastern-earth-space-nasa.jpg');">
+<div class="overlay">
+<a href="#" class="btn">Learn More</a>
+</div>
+</div>
+</li>
+</ul>
+</article>
+<footer class="footer">
+<p>© 2024 SPACE EXPLORATION. All rights reserved.</p>
+</footer>
+</body>
+</html>

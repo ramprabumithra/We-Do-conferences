@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register Your Interest</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: #fece0c;
+  font-family: 'Arial', sans-serif;
+}
+.form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 350px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px rgba(254, 236, 164, 1);
+}
+.form h2{
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #332902;
+}
+.form .input_field{
+  margin-bottom: 10px;
+}
+.form input[type="text"]{
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  padding: 10px;
+}
+.form .btn input[type="submit"]{
+  border: 0;
+  padding: 10px;
+  width: 100%;
+  background: #fece0c;
+  color: #332902;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="form">
+<h2>Register Your Interest</h2>
+<div id="error_message"></div>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSe9XPpJcxzDe-lI4w4IsvEDrUmXUq3cqVhHwoFgpgP3JBcIiw/formResponse" method="post" target="hidden_iframe" onsubmit="return formSubmitted();">
+<div class="input_field">
+<input type="text" name="entry.1944405128" id="name" placeholder="Name" required>
+</div>
+<div class="input_field">
+<input type="text" name="entry.495614395" id="phone" placeholder="Phone Number" required>
+</div>
+<div class="input_field">
+<input type="text" name="entry.912682495" id="email" placeholder="Email" required>
+</div>
+<div class="btn">
+<input type="submit" value="Submit">
+</div>
+</form>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+</div>
+
+<script>
+function formSubmitted() {
+    alert("Form submitted successfully");
+    window.location.href = 'main2.html'; // Redirect back to home page
+    return true;
+}
+</script>
+
+</body>
+</html>
+fform

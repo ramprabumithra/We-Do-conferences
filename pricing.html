@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conference Packages</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<style>
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+width:100%;
+height:100px;
+
+display: block; 
+margin: 0 auto;
+background-color: #A4CCE7;
+
+margin-top:10px;
+color:black;
+text-align:center;
+font-family: 'Montserrat', sans-serif;
+font-size: 40px;
+
+}
+
+
+.container {
+max-width: 1200px;
+margin: auto;
+padding: 20px;
+}
+
+.membership {
+border: 1px solid black;
+border-radius: 8px;
+background-color: #d5e5f0;
+margin-bottom: 20px;
+padding: 20px;
+transition: box-shadow 0.3s ease;
+}
+.membership:hover {
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.price {
+font-size: 22px;
+font-weight: bold;
+color: #2a2a2a;
+}
+ul {
+list-style-type: disc;
+margin: 10px 0;
+padding-left: 20px;
+}
+.signup {
+display: block;
+text-align: center;
+margin-top: 20px;
+padding: 10px 20px;
+background-color: #007bff;
+color: white;
+text-decoration: none;
+border-radius: 5px;
+}
+.signup:hover {
+background-color: #0056b3;
+}
+
+
+.footer{
+color:white;
+background-color:#AF2A2A;
+text-align:center;
+font-family: 'Roboto', sans-serif;
+width:100%;
+height:30px;
+font-size: 20px;
+}
+
+
+.navbar{
+width:100%;
+height:100px;
+background-color:#AF2A2A;
+text-align:right;
+font-family: 'Montserrat', sans-serif;
+
+}
+
+
+
+
+.logo {
+width:230px;
+height:100px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+
+
+nav ul{list-style-type:none;}
+
+nav li{display:inline-block;margin-left:70px;margin-right: 20px;padding-top:23px;position:relative;}
+
+nav a{text-decoration:none;color:white;text-transform:uppercase;font-size:14px;text-align:right;}
+
+nav a:hover{color:#A4CCE7;}
+
+nav a::before{content:"";display:table;height:5px;position:absolute;transition:all ease-in-out 250ms;width:0%;}
+
+nav a:hover::before{width:100%;}
+
+
+
+</style>
+</head>
+<body>
+
+<img class = "logo" src = "wdc.png">
+
+<nav class = 'navbar'>
+<ul>
+
+<li><a href="schedule.html">Schedule</a>
+</li>
+<li><a href="pricing.html">Pricing</a>
+</li>
+<li><a href="speakers.html">Speakers</a>
+</li>
+<li><a href="companies.html">Companies</a>
+</li>
+<li><a href="register.html">Register</a>
+</li>
+<li><a href="faq.html">FAQ</a>
+</li>
+<li><a href="main2.html">Home</a>
+</li>
+</ul>
+</nav>
+
+<header>
+<h1>
+Membership Options
+</h1>
+</header>
+
+<h2 style = "text-align:center;font-family: 'Montserrat', sans-serif;font-size:20px;margin-top:15px;margin-bottom:40px; width:80%;margin-left:150px;">Experience the excitement and innovation of the Space Symposium with our exclusive membership options!</h2> 
+<p style = "text-align:center;font-family: 'Montserrat', sans-serif;font-size:20px;margin-top:15px;margin-bottom:40px; width:80%;margin-left:150px;" >Whether you are an industry professional, an enthusiast, or just curious about the future of space, we have a membership package designed just for you.</p>
+
+<div class="container">
+
+<div class="membership">
+    <h3>Platinum Member</h3>
+    <ul>
+        <li>Full Access to All Events for Each Day: Experience the symposium in its entirety, with access to every event throughout the four-day program.</li>
+        <li>Exclusive Formal Dinners: Attend formal evening dinners to connect with keynote speakers, industry leaders, and fellow enthusiasts in a refined setting.</li>
+    </ul>
+    <p class="price">Price: <strong>£350</strong> (Unlock the ultimate Space Symposium experience and enjoy exclusive networking opportunities.)</p>
+</div>
+
+<div class="membership">
+    <h3>Gold Member</h3>
+    <ul>
+        <li>Full Access to All Events on Each Day: Take part in every session, workshop, and keynote speech across the four days of the symposium.</li>
+        <li>Premium Seating: Secure prime seating in all events for the best view of our esteemed speakers.</li>
+    </ul>
+    <p class="price">Price: <strong>£250</strong> (Experience the full spectrum of the symposium and maximize your participation!)</p>
+</div>
+
+<div class="membership">
+    <h3>Silver Member</h3>
+    <ul>
+        <li>Full Access to All Events Over Two Days: Choose two days of the symposium to attend, and immerse yourself in the most engaging sessions and workshops.</li>
+        <li>Customized Experience: Tailor your attendance to the most relevant days for your interests.</li>
+    </ul>
+    <p class="price">Price: <strong>£150</strong> (Great for those who want to experience the symposium without committing to the full four days!)</p>
+</div>
+
+<div class="membership">
+    <h3>Day Pass</h3>
+    <ul>
+        <li>Full Access to All Events Over a Day: Pick any day of the symposium and participate in all events, including public sessions, workshops, and keynote speeches.</li>
+        <li>Flexibility: Perfect for those with limited availability who still want to be part of the symposium experience.</li>
+    </ul>
+    <p class="price">Price: <strong>£100</strong> (A perfect choice for a taste of the symposium on your chosen day!)</p>
+</div>
+
+<div class="membership">
+    <h3>Dinner Ticket</h3>
+    <ul>
+        <li>Access to Any Formal Evening Dinner: Enjoy a formal dinner with keynote speakers, industry experts, and peers.</li>
+        <li>Networking Opportunities: Connect with leaders in the space industry over a memorable evening meal.</li>
+    </ul>
+    <p class="price">Price: <strong>£125</strong> (A great opportunity to mingle and dine with influential figures in the industry!)</p>
+</div>
+
+<div class="membership">
+    <h3>Single Session Pass</h3>
+    <ul>
+        <li>Access to Any Single Public Session or Workshop: Attend a specific session or workshop of your choice.</li>
+        <li>Customize Your Experience: Choose the session that best matches your interests or professional focus.</li>
+    </ul>
+    <p class="price">Price: <strong>£35 per session</strong> (A cost-effective way to engage with the symposium and expand your knowledge in a specific area!)</p>
+</div>
+
+
+</body>
+<footer class="footer">
+<p>© 2024 SPACE EXPLORATION. All rights reserved.</p>
+</footer>
+</html>

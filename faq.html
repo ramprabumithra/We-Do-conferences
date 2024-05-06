@@ -1,0 +1,228 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+  background: white;
+}
+
+.faq{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  
+  height: 50%;
+  width: 50%;
+  background: #A4CCE7;
+  position:absolute;
+  padding: 25px;
+  border-radius: 5px;
+  
+}
+
+.faq h2{
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: black;
+}
+
+.item{
+
+  margin:10px;
+  border-bottom:1px solid black;
+  position:relative;
+  Padding-bottom:20px;
+  cursor:pointer;
+  text-align: left;
+}
+
+
+.answer{
+  display:none;
+}
+
+.answer.open{
+display:block;
+}
+
+.item span{
+Position:absolute;
+Font-size:15px;
+Right:5px;
+}
+
+
+.faq textarea{
+  resize: none;
+  height: 80px;
+}
+
+.footer{
+color:white;
+background-color:#AF2A2A;
+text-align:center;
+font-family: 'Roboto', sans-serif;
+width:100%;
+height:30px;
+font-size: 20px;
+}
+
+
+.navbar{
+width:100%;
+height:100px;
+background-color:#AF2A2A;
+text-align:right;
+font-family: 'Montserrat', sans-serif;
+
+}
+
+
+
+
+.logo {
+width:230px;
+height:100px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+
+
+nav ul{list-style-type:none;}
+
+nav li{display:inline-block;margin-left:70px;margin-right: 20px;padding-top:23px;position:relative;}
+
+nav a{text-decoration:none;color:white;text-transform:uppercase;font-size:14px;text-align:right;}
+
+nav a:hover{color:#A4CCE7;}
+
+nav a::before{content:"";display:table;height:5px;position:absolute;transition:all ease-in-out 250ms;width:0%;}
+
+nav a:hover::before{width:100%;}
+
+
+
+
+
+
+
+.heading{
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  padding:10%;
+  font-size: 50px
+}
+
+
+</style>
+
+<script>
+
+$(document).ready(function(){
+$(".item").click(function(){
+var $answer = $(this).find(".answer");
+if ($answer.hasClass("open")){
+$answer.removeClass("open");
+}else{
+$answer.addClass("open");}
+
+});
+});
+
+</script>
+
+</head>
+<body>
+
+<img class = "logo" src = "wdc.png">
+
+<nav class = 'navbar'>
+<ul>
+
+<li><a href="schedule.html">Schedule</a>
+</li>
+<li><a href="pricing.html">Pricing</a>
+</li>
+<li><a href="speakers.html">Speakers</a>
+</li>
+<li><a href="companies.html">Companies</a>
+</li>
+<li><a href="register.html">Register</a>
+</li>
+<li><a href="faq.html">FAQ</a>
+</li>
+<li><a href="main2.html">Home</a>
+</li>
+</ul>
+</nav>
+
+
+<div class = "heading">
+<h2 >FAQ</h2>
+</div>
+<div class = "faq">
+<ul id = "faq_list">
+<li class = "item">
+<h3 class = "question"> What is the duration of the conference?</h3>
+<span>+</span>
+<div class = "answer">
+<p> The conference will span across 3 days, starting from the 12/07/2024 to 15/07/2024 </p>
+</div>
+</li>
+<li class = "item">
+<h3 class = "question"> Can I bring guests to the conference?</h3>
+<span>+</span>
+<div class = "answer">
+<p> Yes, you can bring guests to the conference. However, they will need to register separately, and fees may apply depending on the type of pass they require.</p>
+</div>
+</li>
+
+<li class = "item">
+<h3 class = "question"> Will there be on-site registration available?</h3>
+<span>+</span>
+<div class = "answer">
+<p> While we encourage attendees to register in advance to secure their spot, on-site registration will be available. However, please note that some sessions or events may have limited capacity.</p>
+</div>
+</li>
+<li class = "item">
+<h3 class = "question"> Will there be networking opportunities at the conference?</h3>
+<span>+</span>
+<div class = "answer">
+<p> Absolutely! We have dedicated networking sessions, social events, and lounges where attendees can connect with industry professionals, researchers, and fellow enthusiasts.  </p>
+</div>
+</li>
+<li class = "item">
+<h3 class = "question"> Are there any accommodations available for attendees with disabilities?</h3>
+<span>+</span>
+<div class = "answer">
+<p> Yes, we strive to make the conference accessible to all attendees. Please contact our event organizers in advance to discuss any specific accommodations you may require.</p>
+</div>
+</li>
+<li class = "item">
+<h3 class = "question"> Will there be a Q&A session during the conference?</h3>
+<span>+</span>
+<div class = "answer">
+<p> Yes, we're excited to offer interactive Q&A sessions as part of our conference program. These sessions provide attendees with the opportunity to engage directly with speakers, panelists, and industry experts. You'll have the chance to ask questions, seek clarification, and dive deeper into topics of interest. Stay tuned for updates on specific Q&A sessions in our agenda.</p>
+</div>
+</li>
+</ul>
+</div>
+
+
+
+
+</body>
+</html>

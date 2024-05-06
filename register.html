@@ -1,0 +1,212 @@
+<html>
+<head>
+<title>Register Interest</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+outline: none;
+font-family: 'Josefin Sans', sans-serif;
+}
+body {
+background: white;
+}
+.form {
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+max-width: 350px;
+width: 100%;
+background: #A4CCE7;
+position: absolute;
+padding: 25px;
+border-radius: 5px;
+
+}
+.form h2 {
+text-align: center;
+margin-bottom: 20px;
+text-transform: uppercase;
+letter-spacing: 3px;
+color: black;
+}
+.form .input_field {
+margin-bottom: 10px;
+}
+.form .input_field input[type="text"],
+.form .input_field input[type="tel"],
+.form .input_field input[type="email"] {
+border: 1px solid black;
+width: 100%;
+padding: 10px;
+}
+.form .btn input[type="submit"] {
+border: 0;
+margin-top: 15px;
+padding: 10px;
+text-align: center;
+width: 100%;
+background: #AF2A2A;
+color: white ;
+text-transform: uppercase;
+letter-spacing: 5px;
+font-weight: bold;
+border-radius: 25px;
+cursor: pointer;
+}
+
+.footer{
+color:white;
+background-color:#AF2A2A;
+text-align:center;
+font-family: 'Roboto', sans-serif;
+width:100%;
+height:30px;
+font-size: 20px;
+}
+
+
+.navbar{
+width:100%;
+height:100px;
+background-color:#AF2A2A;
+text-align:right;
+font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+.logo {
+width:230px;
+height:100px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+
+
+nav ul{list-style-type:none;}
+
+nav li{display:inline-block;margin-left:70px;margin-right: 20px;padding-top:23px;position:relative;}
+
+nav a{text-decoration:none;color:white;text-transform:uppercase;font-size:14px;text-align:right;}
+
+nav a:hover{color:#A4CCE7;}
+
+nav a::before{content:"";display:table;height:5px;position:absolute;transition:all ease-in-out 250ms;width:0%;}
+
+nav a:hover::before{width:100%;}
+
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+function validate(event) {
+event.preventDefault();
+var name = document.getElementById("name").value;
+var phone = document.getElementById("phone").value;
+var email = document.getElementById("email").value;
+var error = document.getElementById("error_message");
+error.style.padding = "10px";
+var text = "";
+
+if (name.length < 2) {
+text = "Please enter a valid name.";
+error.innerHTML = text;
+return false;
+}
+if (phone.length != 10 || isNaN(phone)) {
+text = "Please enter a valid phone number.";
+error.innerHTML = text;
+return false;
+}
+if (!email.includes("@") || email.length < 6) {
+text = "Please enter a valid email ID.";
+error.innerHTML = text;
+return false;
+}
+
+$.ajax({
+url: 'https://docs.google.com/forms/d/e/1FAIpQLSe9XPpJcxzDe-lI4w4IsvEDrUmXUq3cqVhHwoFgpgP3JBcIiw/formResponse',
+type: 'POST',
+data: {
+'entry.1944405128': name,
+'entry.495614395': phone,
+'entry.912682495': email,
+},
+success: function(response) {
+console.log("Form submitted successfully");
+console.log("Response from server:", response);
+
+window.location.href = 'submitted.html';
+},
+error: function(jqXHR, textStatus, errorThrown) {
+console.error("Error submitting the form:", textStatus, errorThrown);
+if (jqXHR.status === 0) {
+console.log("Form submitted successfully (non-200 status code)");
+
+window.location.href = 'submitted.html';
+} else {
+error.innerHTML = "Error submitting the form. Please try again.";
+}
+}
+});
+
+return true;
+}
+</script>
+</head>
+<body>
+
+<img class = "logo" src = "wdc.png">
+
+<nav class = 'navbar'>
+<ul>
+
+<li><a href="schedule.html">Schedule</a>
+</li>
+<li><a href="pricing.html">Pricing</a>
+</li>
+<li><a href="speakers.html">Speakers</a>
+</li>
+<li><a href="companies.html">Companies</a>
+</li>
+<li><a href="register.html">Register</a>
+</li>
+<li><a href="faq.html">FAQ</a>
+</li>
+<li><a href="main2.html">Home</a>
+</li>
+</ul>
+</nav>
+
+<div class="form">
+<h2>Register Your Interest</h2>
+<div id="error_message"></div>
+<form id="myform"  onsubmit=" validate(event)">
+<div class="input_field">
+<input type="text" placeholder="Name" id="name" required>
+</div>
+<div class="input_field">
+<input type="tel" placeholder="Phone Number" id="phone" required>
+</div>
+<div class="input_field">
+<input type="email" placeholder="Email" id="email" required>
+</div>
+<div class="btn">
+<input type="submit" value="Submit">
+</div>
+</form>
+</div>
+</body>
+</html>
+
+Dynamic Content: With JavaScript loaded, content can be updated dynamically, without requiring a full page refresh. This corresponds to loading new info when users interacts with some elements, such as clicking tabs or button to unveil more contents.
+
+Form Validation: With script code, form input fields will be validated on the fly and displayed instantly to the users if they enter incorrect data or leave required fields unattended. This further minimizes the chance of submission errors and eventually renders a superior user experience.
+
+Interactive Elements: JS is employed to develop interactive items like sliders, tabs, and drop-down menus. Such features make the website navigation smooth and easy to use by means of providing an intuitive interaction with users.

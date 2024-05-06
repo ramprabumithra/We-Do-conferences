@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speakers</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<style>
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+width:100%;
+height:100px;
+
+display: block; 
+margin: 0 auto;
+background-color: #A4CCE7;
+
+margin-top:10px;
+color:black;
+text-align:center;
+font-family: 'Montserrat', sans-serif;
+font-size: 40px;
+
+}
+
+.image-list {
+    margin-left:160px;
+    text-align:center;
+    justify-content: center;
+    margin-top:70px;
+    margin-right:150px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px; 
+    
+    padding: 0;
+    list-style-type: none;
+}
+
+.image-item {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.image-item img {
+
+    border-radius: 10px;
+    transition: transform 0.3s;
+    margin-bottom:30px;
+    margin-right:150px;
+    
+    width:350px; 
+    height: 100px; 
+    border: 2px solid #000; 
+    border-radius: 8px;
+}
+
+.image-item img:hover {
+    transform: scale(1.1);
+}
+
+#popup-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: white;
+    padding: 20px;
+    
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#popup-modal h2 {
+    margin-top: 0;
+}
+
+#popup-modal p {
+    margin-bottom: 20px;
+}
+
+
+#popup-modal .close-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+background-color: transparent;
+color: red;
+border: none;
+font-size: 20px;
+cursor: pointer;
+padding: 0;
+}
+
+
+
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#popup-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black;
+}
+
+
+#popup-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: black;
+}
+
+.container2 {
+border: 1px solid black;
+padding: 20px;
+margin: 20px;
+color: white;
+background-color:#A4CCE7;
+text-align: center;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+color:black;
+}
+.column {
+width: 30%;
+padding: 10px;
+}
+.column ul {
+list-style-type: none;
+padding: 0;
+ 
+
+}
+.column ul li {
+padding:4px;
+font-size: 18px;
+}
+
+
+.container {
+border: 1px solid black;
+padding: 20px;
+margin: 20px;
+background-color: #AF2A2A;
+text-align: center;
+}
+.container h1 {
+font-size: 34px;
+font-family: 'Montserrat', sans-serif;
+color: white;
+}
+
+.inner-box {
+border: 1px solid black;
+font-size:18px;
+padding: 10px;
+margin: 10px;
+border-radius: 8px;
+background-color: #d5e5f0;
+width: 45%;
+height:700px;
+display: inline-block;
+vertical-align: top;
+}
+.inner-box ul {
+list-style-type: disc;
+padding-left: 20px;
+text-align: left;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+@media (max-width: 768px) {
+.inner-box {
+width: 100%;
+margin-bottom: 10px;
+}
+}
+
+
+nav ul{list-style-type:none;}
+
+nav li{display:inline-block;margin-left:70px;margin-right: 20px;padding-top:23px;position:relative;}
+
+nav a{text-decoration:none;color:white;text-transform:uppercase;font-size:14px;text-align:right;}
+
+nav a:hover{color:#A4CCE7;}
+
+nav a::before{content:"";display:table;height:5px;position:absolute;transition:all ease-in-out 250ms;width:0%;}
+
+nav a:hover::before{width:100%;}
+
+.logo {
+width:230px;
+height:100px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+.navbar{
+width:100%;
+height:100px;
+background-color: #AF2A2A;
+text-align:right;
+font-family: 'Montserrat', sans-serif;
+}
+
+.footer{
+color:white;
+background-color:black;
+text-align:center;
+font-family: 'Roboto', sans-serif;
+width:100%;
+height:30px;
+font-size: 20px;
+
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<img class = "logo" src = "wdc.png">
+
+<nav class = 'navbar'>
+<ul>
+
+<li><a href="schedule.html">Schedule</a>
+</li>
+<li><a href="pricing.html">Pricing</a>
+</li>
+<li><a href="speakers.html">Speakers</a>
+</li>
+<li><a href="companies.html">Companies</a>
+</li>
+<li><a href="register.html">Register</a>
+</li>
+<li><a href="faq.html">FAQ</a>
+</li>
+<li><a href="main2.html">Home</a>
+</li>
+</ul>
+</nav>
+
+<header><h1>
+OUR SPONSORS
+</h1></header>
+
+<div class="image-list">
+    <div class="image-item" data-description="Brilliant Optics is a leading space technology company specializing in capturing high-resolution photos in space. Known for its innovative imaging solutions, the company employs cutting-edge technology to provide unparalleled clarity and precision in its space photography. Brilliant Optics' advanced camera systems are designed to withstand the harsh conditions of space while delivering stunning, detailed images of celestial bodies, distant galaxies, and other astronomical phenomena.
+
+The company's expertise in optical engineering and space exploration has made it a trusted partner for scientific missions and space agencies worldwide. Brilliant Optics' high-resolution space photos have contributed to groundbreaking discoveries and advancements in astronomy and astrophysics. With a commitment to pushing the boundaries of what is possible, Brilliant Optics continues to set new standards in space photography and imaging technology.">
+
+        <img src="optics.png" alt="Sponsor 1">
+    </div>
+    <div class="image-item" data-description="Flightsuits Inc. is a cutting-edge company that specializes in the design and manufacture of custom-made space suits for space tourists. With a focus on quality, safety, and innovation, the company creates suits that are tailored to meet the specific needs and preferences of each individual customer. 
+
+Using advanced materials and state-of-the-art technology, Flightsuits Inc. produces space suits that provide exceptional protection and comfort for space travel. The suits are designed to withstand the unique challenges of space, including extreme temperatures, radiation, and microgravity. Additionally, each suit is crafted with ergonomic features and adjustable components to ensure a perfect fit and optimal mobility for the wearer.
+
+Flightsuits Inc. is committed to making space exploration accessible and enjoyable for everyone. Their team of experienced engineers and designers work closely with clients to create personalized space suits that reflect their style and preferences while meeting the highest safety standards. With a strong reputation for excellence, Flightsuits Inc. is a trusted choice for space tourists looking to embark on the adventure of a lifetime in comfort and style.">
+        <img src="flightsuit.png" alt="Sponsor 2">
+    </div>
+    <div class="image-item"  data-description="Veeger Intergalactic is a leading space tourism company that specializes in providing extraordinary experiences for adventurous travelers seeking to explore the wonders of outer space. The company offers a range of tailor-made space travel packages that include suborbital and orbital flights, allowing passengers to experience weightlessness, witness breathtaking views of Earth from space, and explore the vastness of the cosmos.
+
+Veeger Intergalactic's state-of-the-art spacecraft are designed with the latest technology and safety features, ensuring a smooth and secure journey for all passengers. The company is committed to delivering exceptional service and unforgettable moments, making space travel accessible to a wider audience.
+
+Their experienced team of astronauts, engineers, and support staff work together to create a seamless and personalized space tourism experience for each client. Veeger Intergalactic aims to inspire a new era of space exploration and tourism, offering a unique opportunity to be a part of the final frontier.">
+        <img src="veeger.png" alt="Sponsor 3">
+    </div>
+</div>
+<div class="image-list">
+
+    <div class="image-item"  data-description="Asteroid Miners is a pioneering company at the forefront of space resource exploration and extraction. The company focuses on mining near-Earth asteroids for valuable minerals and resources, such as precious metals, rare earth elements, and water. By tapping into these celestial bodies, Asteroid Miners aims to revolutionize industries on Earth and pave the way for sustainable space exploration.
+
+The company's cutting-edge technology and innovative mining techniques enable efficient and precise extraction from asteroids. With a strong emphasis on environmental responsibility and sustainability, Asteroid Miners ensures that their operations have minimal impact on the celestial bodies they explore.
+
+Asteroid Miners collaborates with space agencies, scientific institutions, and industry leaders to advance the field of space resource utilization. Their work is instrumental in opening new frontiers for space exploration, reducing the reliance on Earth's resources, and contributing to the growth of a space-based economy. By unlocking the potential of near-Earth asteroids, Asteroid Miners is shaping the future of space exploration and resource management.">
+        <img  src="miners.png" alt="Sponsor 4">
+    </div>
+    <div class="image-item"  data-description="Grissom Galaxy Trips is a space tourism company that offers unique and unforgettable experiences for individuals seeking to explore the wonders of space. Named after the legendary astronaut Virgil 'Gus' Grissom, the company is dedicated to providing safe and thrilling space travel adventures for its clients.
+
+Grissom Galaxy Trips specializes in designing personalized space tourism packages that include suborbital and orbital flights, offering passengers the chance to experience weightlessness and witness breathtaking views of Earth from space. The company's state-of-the-art spacecraft are equipped with the latest technology and safety features to ensure a smooth and secure journey for all travelers.
+
+In addition to space travel, Grissom Galaxy Trips offers immersive astronaut training programs, preparing individuals for the challenges and excitement of space exploration. The training includes simulations of zero-gravity environments and other space-related exercises to help travelers acclimate to the conditions of space.
+
+Grissom Galaxy Trips is committed to inspiring the next generation of space enthusiasts and explorers by making space travel accessible and exciting. With a team of experienced astronauts, engineers, and support staff, the company aims to provide an exceptional and memorable space tourism experience for all its clients. Through its dedication to excellence and innovation, Grissom Galaxy Trips continues to set new standards in the realm of space tourism.">
+        <img src="grissom.png" alt="Sponsor 5">
+    </div>
+    <div class="image-item"  data-description="Defiant Space Exploration is a cutting-edge company specializing in space tourism and exploration, offering extraordinary experiences for individuals with a passion for venturing beyond Earth's atmosphere. The company is dedicated to pushing the boundaries of what is possible in space travel, providing clients with thrilling and memorable journeys into the final frontier.
+
+Defiant Space Exploration offers a range of space tourism packages, including suborbital and orbital flights, that allow passengers to experience weightlessness, witness breathtaking views of Earth from space, and explore the vastness of the cosmos. The company's advanced spacecraft are designed with the latest technology and safety features to ensure a smooth and secure journey for all travelers.
+
+In addition to space tourism, Defiant Space Exploration is committed to advancing space exploration through research and development projects. The company collaborates with scientific institutions and space agencies to conduct cutting-edge research and contribute to the expansion of humanity's presence in space.
+
+Defiant Space Exploration prides itself on its exceptional service and attention to detail, ensuring that each client receives a personalized and unforgettable space travel experience. With a team of experienced astronauts, engineers, and support staff, the company aims to inspire a new era of space exploration and tourism.
+
+Through its dedication to excellence and innovation, Defiant Space Exploration continues to set new standards in space tourism and exploration, providing a gateway for adventurous individuals to embark on the journey of a lifetime.">
+        <img src="defiant.png" alt="Sponsor 6">
+    </div>
+</div>
+<div class="image-list">
+    <div class="image-item"  data-description="Rocket XN Ltd is a leading aerospace company specializing in the manufacturing and leasing of reusable booster rockets for low Earth orbit missions. The company is known for its innovative approach to rocket technology, which emphasizes reusability and cost-effectiveness. By producing reusable rockets, Rocket XN Ltd helps reduce the overall costs associated with space launches, making space exploration more accessible and sustainable.
+
+The company's rockets are designed with advanced engineering techniques and state-of-the-art materials, ensuring optimal performance and reliability. Rocket XN Ltd's reusable booster rockets can be rapidly turned around and prepared for multiple launches, streamlining the process of sending payloads into space.
+
+Rocket XN Ltd collaborates with various industries and organizations, providing efficient and dependable rocket solutions for satellite deployment, space tourism, and scientific missions. Their dedication to advancing space technology and promoting sustainable practices in the aerospace sector has established Rocket XN Ltd as a key player in the industry.">
+        <img src="XN.png" alt="Sponsor 7">
+    </div>
+    <div class="image-item"  data-description="Reliant Ventures Incorporated is a reputable space tourism company committed to providing exceptional space travel experiences for thrill-seekers and adventurers worldwide. The company offers a range of space tourism packages tailored to different interests and preferences, allowing travelers to embark on unforgettable journeys beyond Earth's atmosphere.
+
+With a focus on safety, comfort, and innovation, Reliant Ventures Incorporated uses advanced spacecraft designed with state-of-the-art technology and safety features. Passengers can enjoy stunning views of Earth from space, experience weightlessness, and marvel at the wonders of the cosmos during their journey.
+
+The company offers various space travel options, including suborbital and orbital flights, as well as immersive training programs for aspiring space travelers. These programs provide participants with essential skills and knowledge to prepare for their space adventure.
+
+Reliant Ventures Incorporated is dedicated to making space exploration accessible and enjoyable for a wide audience. The company's commitment to excellence, attention to detail, and passion for space exploration make it a trusted choice for those seeking the ultimate space tourism experience.">
+        <img src="reliant.png" alt="Sponsor 8">
+    </div>
+    <div class="image-item"  data-description="Enterprise Travels Limited is a pioneering space tourism company dedicated to making the dream of traveling to space a reality for adventurous travelers around the world. With a focus on providing safe, luxurious, and unforgettable experiences, Enterprise Travels Limited offers a range of space travel packages designed to suit various interests and budgets.
+
+Travelers can embark on breathtaking suborbital and orbital flights, where they will experience weightlessness and witness stunning views of Earth from space. The company prides itself on its state-of-the-art spacecraft and commitment to the highest safety standards, ensuring a secure and comfortable journey for all its passengers.
+
+In addition to space flights, Enterprise Travels Limited offers exclusive astronaut training programs to prepare travelers for their space adventure. This includes experiencing the thrill of simulated zero-gravity and other space-related training exercises.
+
+Enterprise Travels Limited is committed to advancing the field of space tourism by continuously innovating and expanding its offerings. The company's passion for space exploration and dedication to customer satisfaction make it a leading choice for those seeking the ultimate space travel experience.">
+        <img src="travels.png" alt="Sponsor 9">
+    </div>
+</div
+    
+</div>
+
+<div id="overlay"></div>
+
+<div id="popup-modal">
+    <h2 id="popup-title"></h2>
+    <p id="popup-description"></p>
+    <button class="close-btn" onclick="closePopup()">x</button>
+</div>
+
+<div class="container2">
+<h2 style="text-align:center"><b>
+Exhibiting Company Types:
+</b></h2>
+<div class="column">
+<ul>
+<li>Advanced Manufacturing</li>
+<li>Aerospace Systems</li>
+<li>Associations & Non-Profits</li>
+<li>Business Services</li>
+<li>Communications</li>
+</ul>
+</div>
+<div class="column">
+<ul>
+<li>Consulting</li>
+<li>Engineering Services</li>
+<li>Government & Defense</li>
+<li>City & State</li>
+<li>Human Space Flight</li>
+</ul>
+</div>
+<div class="column">
+<ul>
+<li>IT/Software Engineering</li>
+<li>Media</li>
+<li>Research & Development</li>
+<li>Satellite Systems</li>
+<li>Space Service Providers</li>
+<li>Spaceports & Spaceport Service Providers & More</li>
+
+</ul>
+</div>
+</div>
+
+<div class="container">
+<h1><b>PRODUCTS ON DISPLAY</b></h1>
+<div class="inner-box">
+<ul>
+<li><b>Advanced Manufacturing</b> (Advanced Materials, Tooling, Automation/Robotics, Smart Factory, Testing/Qualification/Validation, Additive Manufacturing, 3D Printing)</li>
+<li><b>Aerospace Systems</b> (Launch Vehicles, Unmanned Aerial Vehicles, Aerospace Systems Integrator, Sensors, Electronics, Components, Aerospace Software Engineering, Propulsion, Power Systems)</li>
+<li><b>Association/Non-Profit Business Services</b></li>
+<li><b>Communications</b>(Broadcast, Satellite Internet, Ground Infrastructure)</li>
+<li><b>Consulting Services Engineering Services</b></li>
+<li><b>Government</b> (Military/Defense, Federal Agency, Local/City/State)</li>
+</ul>
+</div>
+<div class="inner-box">
+<ul>
+<li><b>Human Space Flight</b> (Human Systems Integration, Wearables, Space Suits, Nutrition, Human Performance)</li>
+<li><b>IT/Software Engineering </b>(Cloud Computing/Services, AI and Predictive Analytics, Satellite Imaging, Cybersecurity, Data Management, Hardware)</li>
+<li><b>Research & Development</b> (Education/Training, Materials Research, Microgravity Research, Biotech Research, Energy Systems)</li>
+<li><b>Satellite Systems</b> (Components, Sensors, Satellite Systems Integrator, Electronics, Propulsion, Fuel, Software Engineering, SmallSat, CubeSat, Power Systems)</li>
+<li><b>Space Service Provider</b> (Launch Service Integrator, Debris Mitigation, In-Space Mining, In-Space Construction, In-Space Manufacturing, On-Orbit Services)</li>
+<li><b>Spaceports & Spaceport Service Provider</b> (Architecture/Design, Construction Services)</li>
+</ul>
+</div>
+</div>
+
+
+
+<script>
+
+$(document).ready(function() {
+$('.image-item').on('click', function() {
+
+var title = $(this).data('title');
+var description = $(this).data('description');
+var formattedDescription = description.replace(/\n/g, '<br>');
+$('#popup-title').text(title);
+$('#popup-description').html(formattedDescription);  
+$('#overlay').show();
+$('#popup-modal').show();
+});
+});
+        
+function closePopup() {
+$('#overlay').hide();
+$('#popup-modal').hide();
+}
+
+</script>
+
+
+
+
+
+</body>
+
+<footer class="footer">
+<p>© 2024 SPACE EXPLORATION. All rights reserved.</p>
+</footer>
+
+</html>
